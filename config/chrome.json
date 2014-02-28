@@ -1,0 +1,25 @@
+{
+	"project": "Test",
+	"domains": {
+		"bbc.co.uk": "http://www.bbc.co.uk",
+		"live.bbc.co.uk": "http://www.live.bbc.co.uk"
+	},
+	"engines" : [
+		"phantomjs"
+	],
+	"sizes": [
+		"320",
+		"768",
+		"1440"
+	],
+	"paths": [
+		"/",
+		"/news",
+		"/weather",
+		"/tv",
+		"/aboutthebbc"
+	],
+	"outputDir": "bbc",
+	"fuzz": "20%",
+	"maxConnections": 20
+}
