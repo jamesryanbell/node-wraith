@@ -1,0 +1,53 @@
+{
+  "name": "wraith",
+  "version": "1.0.0",
+  "description": "A responsive screenshot comparison tool. Based on the Ruby version available at http://github.comm/BBC-News/wraith",
+  "license": "MIT",
+  "repository": "jamesryanbell/node-wraith",
+  "bin": {
+    "wraith": "cli.js"
+  },
+  "author": {
+    "name": "James Bell",
+    "email": "james@james-bell.co.uk",
+    "url": "http://james-bell.co.uk"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {},
+  "files": [
+    "index.js",
+    "cli.js",
+    "lib/*",
+    "gallery.html",
+    "snap.js"
+  ],
+  "keywords": [
+    "page",
+    "website",
+    "site",
+    "web",
+    "url",
+    "resolution",
+    "size",
+    "screenshot",
+    "screen",
+    "responsive",
+    "cli",
+    "wraith",
+    "phantomjs",
+    "triflejs",
+    "slimerjs"
+  ],
+  "dependencies": {
+    "chalk": "~0.4.0",
+    "nopt": "~2.1.2",
+    "crawl": "~0.3.1",
+    "async": "~0.2.10",
+    "mkdirp": "~0.3.5",
+    "mustache": "~0.8.1",
+    "rimraf": "~2.2.6"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<style type="text/css">
+			.short-screenshot {
+				height: 200px;
+				width: 200px;
+				margin-bottom: 10px;
+				overflow: hidden;
+				display: block;
+			}
+			.filename {
+				word-break: break-all;
+			}
+		</style>
+		<title>Screenshots - {{project}}</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row page-header">
+				<h1>List of screenshots for {{project}}</h1>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="panel">
+						<h3>Screenshots:</h3>
+						<ul class="list-group list-group-flush list-unstyled">
+							{{#dirs}}
+								<li><a href="#/{{#resolve}}{{.}}{{/resolve}}">/{{#resolve}}{{.}}{{/resolve}}</a></li>
+							{{/dirs}}
+						</ul>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					{{#images}}
+						{{#dir}}
+						<div class="row">
+							<a name="/{{#resolve}}{{dir}}{{/resolve}}"></a>
+							<h2>/{{#resolve}}{{dir}}{{/resolve}}</h2></a>
+						</div>
+						{{/dir}}
+						<div class="row">
+							<h4 class="col-lg-1 text-muted">{{size}}px</h4>
+							<div class="col-lg-3">
+								<a class="short-screenshot" href="{{#resolve}}{{base}}{{/resolve}}">
+									<img class="img-thumbnail" width="200" src="{{#resolve}}{{base}}{{/resolve}}">
+								</a>
+								<p class="text-center filename">{{#resolve}}{{base}}{{/resolve}}</p>
+							</div>
+							<div class="col-lg-3">
+								<a class="short-screenshot" href="{{#resolve}}{{compare}}{{/resolve}}">
+									<img class="img-thumbnail" width="200" src="{{#resolve}}{{compare}}{{/resolve}}">
+								</a>
+								<p class="text-center filename">{{#resolve}}{{compare}}{{/resolve}}</p>
+							</div>
+							<div class="col-lg-3">
+								<a class="short-screenshot" href="{{#resolve}}{{output}}{{/resolve}}">
+									<img class="img-thumbnail" width="200" src="{{#resolve}}{{output}}{{/resolve}}">
+								</a>
+								<p class="text-center filename">diff</p>
+								<p class="text-center filename text-muted">{{#contents}}{{diff}}{{/contents}} bytes</p>
+							</div>
+						</div>
+					{{/images}}
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
