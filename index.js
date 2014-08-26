@@ -2,7 +2,10 @@
 
 var fs = require('fs'),
 	wraith = require('./lib/wraith'),
-	spider = require('./lib/spider');
+	spider = require('./lib/spider'),
+	chalk = require('chalk'),
+	path = require('path'),
+	rmdir = require('rimraf');
 
 module.exports.run = run;
 
@@ -11,11 +14,18 @@ function run(configFile) {
 	var	domains = [],
 		domainLabels = [],
 		outputFolder = '',
-		baseFolder = process.cwd() + '/';
+		baseFolder = path.normalize(process.cwd() + '/'),
+		config = null;
 
-	var config = require(baseFolder + 'config/' + configFile + '.json');
+	try  {
+		config = require(path.normalize(baseFolder + 'config/' + configFile + '.json'));
+	} catch(err) {
+		console.error(chalk.red('Configuration file specified could not be found or accessed'));
+		return false;
+	}
 
 	outputFolder = typeof config.outputDir === 'undefined' ? baseFolder + 'shots/' : baseFolder + 'shots/' + config.outputDir;
+	outputFolder = path.normalize(outputFolder);
 
 	for(var domain in config.domains) {
 		domains.push(config.domains[domain].replace(/\/+$/, ''));
@@ -31,12 +41,15 @@ function run(configFile) {
 	}
 
 	if(config.snap) {
-		config.snap = baseFolder + config.snap;
+		config.snap = path.normalize(baseFolder + config.snap);
 	} else {
-		config.snap = __dirname + '/snap.js';
+		config.snap = path.normalize(__dirname + '/snap.js');
 	}
 
 	var cb = function() {
+		var temp_path = path.normalize(__dirname + '/_temp');
+		//rmdir(temp_path + '/ff_profiles');
+		rmdir(temp_path, function(error){});
 		console.log('Done');
 	};
 

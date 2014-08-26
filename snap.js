@@ -2,23 +2,21 @@ var system = require('system');
 var page = require('webpage').create();
 var fs = require('fs');
 
-if (system.args.length === 3) {
-    console.log('Usage: snap.js <some URL> <view port width> <target image name>');
-    phantom.exit();
-}
-
-var url = system.args[1];
-var image_name = system.args[3];
-var view_port_width = system.args[2];
-var current_requests = 0;
-var last_request_timeout;
-var final_timeout;
+var url = system.args[1],
+    view_port_width = system.args[2],
+    image_name = system.args[3],
+    useragent = system.args[4],
+    current_requests = 0,
+    last_request_timeout = null,
+    final_timeout = null;
 
 page.viewportSize = { width: view_port_width, height: 2000};
 page.settings = { loadImages: true, javascriptEnabled: true };
 
 // If you want to use additional phantomjs commands, place them here
-//page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.17';
+if( useragent !== '' ) {
+  page.settings.userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/28.0.1500.95 Safari/537.17';
+}
 
 // You can place custom headers here, example below.
 // page.customHeaders = {
@@ -44,13 +42,13 @@ page.onResourceRequested = function(req) {
   current_requests += 1;
 };
 
-//TrifleJS only
-/*page.onLoadFinished = function(status) {
+//TrifleJS doesn't support onResourceRequested and onResourceReceived yet so we can only fire based on onLoadFinished
+page.onLoadFinished = function(status) {
   if (status == 'success') {
     current_requests -= 1;
     debounced_render();
   }
-};*/
+};
 
 //SlimerJS or PhantomJS
 page.onResourceReceived = function(res) {
@@ -64,7 +62,6 @@ page.open(url, function(status) {
   if (status !== 'success') {
     console.log('Error with page ' + url);
     phantom.exit();
-  } else {
   }
 });
 

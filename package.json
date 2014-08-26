@@ -1,9 +1,12 @@
 {
   "name": "wraith",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "A responsive screenshot comparison tool. Based on the Ruby version available at http://github.comm/BBC-News/wraith",
   "license": "MIT",
-  "repository": "jamesryanbell/node-wraith",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jamesryanbell/node-wraith"
+  },
   "bin": {
     "wraith": "cli.js"
   },
