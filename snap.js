@@ -1,14 +1,14 @@
-var system = require('system');
-var page = require('webpage').create();
-var fs = require('fs');
+var system = require('system'),
+    page   = require('webpage').create(),
+    fs     = require('fs');
 
-var url = system.args[1],
-    view_port_width = system.args[2],
-    image_name = system.args[3],
-    useragent = system.args[4],
-    current_requests = 0,
+var url                  = system.args[1],
+    view_port_width      = system.args[2],
+    image_name           = system.args[3],
+    useragent            = system.args[4],
+    current_requests     = 0,
     last_request_timeout = null,
-    final_timeout = null;
+    final_timeout        = null;
 
 page.viewportSize = { width: view_port_width, height: 2000};
 page.settings = { loadImages: true, javascriptEnabled: true };

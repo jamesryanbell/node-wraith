@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
-var nopt = require('nopt'),
-	chalk = require('chalk'),
+var nopt   = require('nopt'),
+	chalk  = require('chalk'),
 	wraith = require('./index');
 
 function showHelp() {

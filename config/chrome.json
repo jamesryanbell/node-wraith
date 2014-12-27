@@ -19,7 +19,7 @@
 		"/tv",
 		"/aboutthebbc"
 	],
-	"outputDir": "bbc",
+	"outputDir": "shots/bbc",
 	"fuzz": "20%",
 	"maxConnections": 20
 }
