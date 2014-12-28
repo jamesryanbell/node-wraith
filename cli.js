@@ -36,13 +36,12 @@ function init(args) {
 	if ( opts.version ) { return console.log(require('./package').version); }
 	if ( opts.config ) {
 		if ( args[0] === '' ) {
-			console.error(chalk.yellow('You must specifiy a configuration file'));
+			console.error(chalk.red.bold('You must specifiy a configuration file'));
 			return showHelp();
 		} else {
 			return wraith.run(args[0]);
 		}
 	}
-
 	return showHelp();
 }
 
