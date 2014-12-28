@@ -1,68 +1,19 @@
 #!/usr/bin/env node
 'use strict';
-var nopt   = require('nopt'),
+
+var program = require('commander'),
 	chalk  = require('chalk'),
 	wraith = require('./index');
 
-function showHelp() {
-	console.log('A responsive screenshot comparison tool.');
-	console.log('Based on the Ruby version available at http://github.com/BBC-News/wraith');
-	console.log('');
-	console.log(chalk.underline('Usage'));
-	console.log('  wraith --config <file>');
-	console.log('');
-	console.log(chalk.underline('Example'));
-	console.log('  wraith --config chrome');
-	console.log('');
-}
+	program.unknownOption = program.help;
+	program
+		.usage('[options] <file ...>')
+		.version(require('./package').version)
+		.option('-c, --config [config]', 'You must specifiy a configuration file')
+		.parse(process.argv);
 
-function getStdin(cb) {
-	var ret = '';
-
-	process.stdin.resume();
-	process.stdin.setEncoding('utf8');
-
-	process.stdin.on('data', function (data) {
-		ret += data;
-	});
-
-	process.stdin.on('end', function () {
-		cb(ret);
-	});
-}
-
-function init(args) {
-	if ( opts.help ) { return showHelp(); }
-	if ( opts.version ) { return console.log(require('./package').version); }
-	if ( opts.config ) {
-		if ( args[0] === '' ) {
-			console.error(chalk.red.bold('You must specifiy a configuration file'));
-			return showHelp();
-		} else {
-			return wraith.run(args[0]);
-		}
-	}
-	return showHelp();
-}
-
-var opts = nopt({
-	help: Boolean,
-	version: Boolean,
-	config: Boolean
-}, {
-	h: '--help',
-	v: '--version',
-	c: '--config'
-});
-
-var args = opts.argv.remain;
-
-if (process.stdin.isTTY) {
-	init(args);
+if(!program.config) {
+	program.help();
 } else {
-	getStdin(function (data) {
-		[].push.apply(args, data.trim().split('\n'));
-		init(args);
-	});
+	wraith.run(program.config);
 }
-
