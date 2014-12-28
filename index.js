@@ -1,6 +1,7 @@
 'use strict';
 
 var fs     = require('fs'),
+	path     = require('path'),
 	wraith = require('./lib/wraith'),
 	spider = require('./lib/spider'),
 	chalk  = require('chalk'),
