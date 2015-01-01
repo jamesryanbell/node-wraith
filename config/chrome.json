@@ -15,11 +15,8 @@
 	"paths": [
 		"/",
 		"/news",
-		"/weather",
-		"/tv",
-		"/aboutthebbc"
+		"/weather"
 	],
 	"outputDir": "shots/bbc",
-	"fuzz": "20%",
 	"maxConnections": 20
 }
