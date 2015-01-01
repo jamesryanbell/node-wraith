@@ -1,3 +1,5 @@
+#MAJOR CHANGES HAVE TAKEN PLACE BUT HAVE NOT BEEN DOCUMENTED YET, PLEASE WAIT FOR DOCUMENTATION CHANGES BEFORE USING :)
+
 # Wraith
 A responsive screenshot comparison tool.
 Based on the Ruby version available at [http://github.com/BBC-News/wraith](http://github.com/BBC-News/wraith)
