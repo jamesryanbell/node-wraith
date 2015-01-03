@@ -6,6 +6,3 @@ deploy:
     secure: bPawPetp26/o+/aTL3DAMkOunuZUzzNs75sQNbk0OSmJEwHut/41s1XNewHMvt3NaKwa4+Cmxsi0mBepO609njZKvqgcj1v6gdB9YhYiJKRYiA3Il3JcpopPNz5CusGsH6l6m5A3gtUZLhjaLHc8sPgepd4uDS5WFZz/xoYfxtQ=
   on:
     repo: jamesryanbell/node-wraith
-deply:
-  api_key:
-    secure: cts7nljxLF5S+CE/9ZAdf1L1jP3Ake/yCEu4ncggVlxFu/uibeEifVtnDsywBtqovcWHdLmYXReDW0cza8CwjXci92fOJSI+Y/+giiyNPlRp9mkt8Grv0A1l62x2J3LmU15xXBOzFTLhM7E2shjBw9H1vGedL5O92YHXvadEohQ=
