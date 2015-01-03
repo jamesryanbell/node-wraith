@@ -10,6 +10,7 @@
   "bin": {
     "wraith": "cli.js"
   },
+  "main": "lib/wraith.js",
   "author": {
     "name": "James Bell",
     "email": "james@james-bell.co.uk",
@@ -59,6 +60,7 @@
     "webshot": "^0.15.3"
   },
   "devDependencies": {
-    "jshint": "^2.5.11"
+    "jshint": "^2.5.11",
+    "jshint-stylish": "^1.0.0"
   }
 }

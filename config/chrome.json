@@ -1,9 +1,9 @@
 {
 	"project": "Test",
-	"domains": {
-		"bbc.co.uk": "http://www.bbc.co.uk",
-		"live.bbc.co.uk": "http://www.live.bbc.co.uk"
-	},
+	"domains": [
+		"http://www.adt.co.uk",
+		"http://www.live.bbc.co.uk"
+	],
 	"engines" : [
 		"phantomjs"
 	],
@@ -12,11 +12,7 @@
 		"768",
 		"1440"
 	],
-	"paths": [
-		"/",
-		"/news",
-		"/weather"
-	],
+	"spider": "./spider.txt",
 	"outputDir": "shots/bbc",
 	"maxConnections": 20
 }

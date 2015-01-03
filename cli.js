@@ -9,7 +9,7 @@ program.unknownOption = program.help;
 program
 	.usage('[options] <file ...>')
 	.version(require('./package').version)
-	.option('-c, --config [config]', 'You must specifiy a configuration file')
+	.option('-c, --config [config]', 'Specify the location of the configuration file')
 	.option('-q, --quiet', 'All logging is hidden')
 	.parse(process.argv);
 
