@@ -1,6 +1,6 @@
 language: node_js
 deploy:
   api_key: amFtZXNyeWFuYmVsbDpOdWZjUnVsZTEyNQ==
-    secure: FdaGSEGV9+hrdKqIDhYo2wBPs3TZ5E2wEDSDhWdowajzmRMi6e8rTL7ZkRyaGGMeEarscUtaHct/sDjH+BpDIIwle2ynTTclGXA5UsxaFAXqRiHI61O9q+iRVL1GdgreUIcYr8FHO7RusQcah7AFQai+CckO94ZC1nYJJxUWu+E=
+  secure: FdaGSEGV9+hrdKqIDhYo2wBPs3TZ5E2wEDSDhWdowajzmRMi6e8rTL7ZkRyaGGMeEarscUtaHct/sDjH+BpDIIwle2ynTTclGXA5UsxaFAXqRiHI61O9q+iRVL1GdgreUIcYr8FHO7RusQcah7AFQai+CckO94ZC1nYJJxUWu+E=
   email: james@james-bell.co.uk
   provider: npm
