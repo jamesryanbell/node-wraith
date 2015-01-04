@@ -1,7 +1,7 @@
 {
 	"project": "Test",
 	"domains": [
-		"http://www.adt.co.uk",
+		"http://www.bbc.co.uk",
 		"http://www.live.bbc.co.uk"
 	],
 	"engines" : [
@@ -12,7 +12,11 @@
 		"768",
 		"1440"
 	],
-	"spider": "./spider.txt",
+	"paths": [
+		"/",
+		"/tv",
+		"/weather"
+	],
 	"outputDir": "shots/bbc",
 	"maxConnections": 20
 }
