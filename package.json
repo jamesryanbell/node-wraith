@@ -58,7 +58,10 @@
     "progress": "^1.1.8",
     "rimraf": "~2.2.6",
     "w3counter": "^1.0.3",
-    "webshot": "^0.15.3"
+    "webshot": "^0.15.3",
+    "connect": "^3.3.5",
+    "open": "^0.0.5",
+    "serve-static": "^1.9.3"
   },
   "devDependencies": {
     "jshint": "^2.5.11",
