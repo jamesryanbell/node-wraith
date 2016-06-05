@@ -54,6 +54,7 @@
     "moment": "^2.8.4",
     "mustache": "~0.8.1",
     "node-resemble-js": "0.0.4",
+    "phantomjs2": "^2.2.0",
     "progress": "^1.1.8",
     "rimraf": "~2.2.6",
     "w3counter": "^1.0.3",
