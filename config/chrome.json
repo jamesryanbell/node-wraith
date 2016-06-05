@@ -18,5 +18,9 @@
 		"/weather"
 	],
 	"outputDir": "shots/bbc",
-	"maxConnections": 20
+	"maxConnections": 20,
+	"server": {
+		"start": true,
+		"port": 23423
+	}
 }
